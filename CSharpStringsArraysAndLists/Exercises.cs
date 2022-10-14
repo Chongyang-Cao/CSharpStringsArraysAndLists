@@ -16,16 +16,52 @@ namespace CSharpStringsArraysAndLists
         // 1: Arrays
         // Create an array of doubles each of which holds three coordinates
         // Print these to the screen
-
+        public static void arraycords(double a, double b, double c, double d, double e, double f)
+        {
+            double[,] threecoords = new double[3,2];
+            threecoords[0,0] = a;
+            threecoords[0,1] = b;
+            threecoords[1,0] = c;
+            threecoords[1,1] = d;
+            threecoords[2,0] = e;
+            threecoords[2,1] = f;
+            Console.WriteLine(Examples.PrintCoordinates(threecoords));
+        }
         // 2: Byte Arrays
         // i) Create an array of bytes that represents the word hello. Convert this to a string and output the result.
         // ii) Convert the word hello both in Chinese and in English to bytes. Output the byte array. 
-
+        public static string bytething(string word)
+        {
+            byte[] array = Encoding.ASCII.GetBytes(word);
+            return string.Join(" ", array);
+        }
+        public static string stringthing(UTF32Encoding[] byteword)
+        {
+            List<string> b = new List<string>();
+            foreach (UTF32Encoding i in byteword) {
+                 b.Add(Convert.ToString(i));
+            }
+            return string.Join("",b);
+        }
         // 3: Temperatures
         // Populate a list of doubles to represent daily temperatures over two weeks
         // Calculate and output the min, max and average temperatures over the time period
         // Sort the list in ascending order and print it out
-
+        public static void tempaverages()
+        {
+            double temp = 0;
+            List<double> twoweeks = new List<double>();
+            for (int i = 0; i < 14; i++)
+            {
+                Console.WriteLine("What was the temperature today? ");
+                temp = Convert.ToDouble(Console.ReadLine());
+                twoweeks.Add(temp);
+            }
+            twoweeks.Sort();
+            double total = twoweeks.Sum();
+            
+            Console.WriteLine($"The max temperature this week was {twoweeks.Last()}, the minimum temperature was {twoweeks.First()} and the average was {total/twoweeks.Count}");
+        }
         // 4: Students
         // Populate a list of student data with a firstname, surname and date of birth. Use a tuple.
         // Print the names of the oldest and youngest students

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace CSharpStringsArraysAndLists
 {
@@ -10,8 +11,13 @@ namespace CSharpStringsArraysAndLists
             //Examples.UsingAStringBuilder();
             //Examples.UsefulStringAndCharFunctions();
             //Examples.UsingArrays();
-            Examples.UsingLists();
-
+            //Examples.UsingLists();
+            //Examples.UsefulStringAndCharFunctions();
+            //Exercises.arraycords(1,2,3,4,5,6);
+            //Console.WriteLine(Exercises.bytething("helloaaa"));
+            //List<UTF32Encoding> t = new List<UTF32Encoding>();
+            //Console.WriteLine(Exercises.stringthing(t);
+            Exercises.tempaverages();
         }
 
 

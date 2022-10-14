@@ -21,16 +21,17 @@ namespace CSharpStringsArraysAndLists
             Console.WriteLine(string.Join(",", numbersB));
 
             // They can have multiple dimensions
-            int[,] coordinatesA = new int[2, 2];
+            double[,] coordinatesA = new double[2, 2];
             coordinatesA[0, 0] = 1;
             coordinatesA[0, 1] = 3;
+            coordinatesA[1, 0] = 4;
             Console.WriteLine(PrintCoordinates(coordinatesA));
 
-            int[,] coordinatesB = { { 1, 3 }, { 2, 4 } };
+            double[,] coordinatesB = { { 1, 3 }, { 2, 4 } };
             Console.WriteLine(PrintCoordinates(coordinatesB));
         }
 
-        public static string PrintCoordinates(int[,] coordinates)
+        public static string PrintCoordinates(double[,] coordinates)
         {
             string ret = string.Empty;
             for (int i=0; i < coordinates.GetLength(0); i++)
