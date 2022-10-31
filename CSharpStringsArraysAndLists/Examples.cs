@@ -176,7 +176,7 @@ namespace CSharpStringsArraysAndLists
             Console.WriteLine($"trim removes white space: {sentance.Trim()}");
             Console.WriteLine($"We can replace characters: {sentance.Replace("cat", "dog")}");
             Console.WriteLine($"We can substring characters: {sentance.Substring(1, 3)}");
-            Console.WriteLine($"Check the character type: {Char.IsPunctuation(sentance[3])}");    
+            Console.WriteLine($"Check the character type: {Char.IsPunctuation(sentance[4])}");    
         }
 
         

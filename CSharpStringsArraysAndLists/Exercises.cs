@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,13 +20,13 @@ namespace CSharpStringsArraysAndLists
         // Print these to the screen
         public static void arraycords(double a, double b, double c, double d, double e, double f)
         {
-            double[,] threecoords = new double[3,2];
-            threecoords[0,0] = a;
-            threecoords[0,1] = b;
-            threecoords[1,0] = c;
-            threecoords[1,1] = d;
-            threecoords[2,0] = e;
-            threecoords[2,1] = f;
+            double[,] threecoords = new double[3, 2];
+            threecoords[0, 0] = a;
+            threecoords[0, 1] = b;
+            threecoords[1, 0] = c;
+            threecoords[1, 1] = d;
+            threecoords[2, 0] = e;
+            threecoords[2, 1] = f;
             Console.WriteLine(Examples.PrintCoordinates(threecoords));
         }
         // 2: Byte Arrays
@@ -39,9 +41,9 @@ namespace CSharpStringsArraysAndLists
         {
             List<string> b = new List<string>();
             foreach (UTF32Encoding i in byteword) {
-                 b.Add(Convert.ToString(i));
+                b.Add(Convert.ToString(i));
             }
-            return string.Join("",b);
+            return string.Join("", b);
         }
         // 3: Temperatures
         // Populate a list of doubles to represent daily temperatures over two weeks
@@ -59,14 +61,34 @@ namespace CSharpStringsArraysAndLists
             }
             twoweeks.Sort();
             double total = twoweeks.Sum();
-            
-            Console.WriteLine($"The max temperature this week was {twoweeks.Last()}, the minimum temperature was {twoweeks.First()} and the average was {total/twoweeks.Count}");
+
+            Console.WriteLine($"The max temperature this week was {twoweeks.Last()}, the minimum temperature was {twoweeks.First()} and the average was {total / twoweeks.Count}");
         }
         // 4: Students
         // Populate a list of student data with a firstname, surname and date of birth. Use a tuple.
         // Print the names of the oldest and youngest students
         // Print out how many students were born after 2010
         // Create a new list of strings with the full names of all the students and print this out     
+        public static void Students()
+        {
+            List<(string fname, string surname, DateOnly dob)> students = new List<(string fname, string surname, DateOnly dob)>();
+            List<string> fnames = new List<string> { "John", "Andrew", "Barry", "Dan" };
+            List<string> surnames = new List<string> { "Snow", "Johnson", "Tha", "E" };
+            var dob1 = new DateOnly(2000, 12, 5);
+            var dob2 = new DateOnly(1999, 5, 14);
+            var dob3 = new DateOnly(2002, 8, 26);
+            var dob4 = new DateOnly(2001, 3, 31);
+            List<DateOnly> dobs = new List<DateOnly> { dob1, dob2, dob3, dob4 };
+            DateOnly dob = new DateOnly(2000, 12, 5);
+            for (int i = 0; i < 3; i++)
+            {
+                students.Add((fnames[i], surnames[i], dobs[i]));
+            }
+            Console.WriteLine(String.Join(",", students));
+        }
+        public static void oldyoung(List<(string fname, string surname, DateOnly dob)> student){
+            
+        }
 
         // 5: Pig Latin
         // Move the first letter of each word to the end of it, then add "ay" to the end of the word. 
@@ -74,7 +96,18 @@ namespace CSharpStringsArraysAndLists
         // The cat sat on the mat. => heTay atcay noay hetay atmay.
         public static string PigLatin(string input)
         {
-            throw new NotImplementedException();
+            string[] sentence = input.Split(" ");
+            Console.WriteLine(string.Join(" ", sentence));
+            Console.WriteLine(sentence[0]);
+            for(int i = 0; i< sentence.Length; i++)
+            {
+                Console.WriteLine(i);
+                string word = sentence[i];
+                string fchar = Convert.ToString(word[0]) ;
+                word = word.Remove(0,1).ToLower()+ fchar + "ay";
+                sentence[i] = word;
+            }
+            return string.Join(" ", sentence);
         }
 
         // 6. Mexican wave

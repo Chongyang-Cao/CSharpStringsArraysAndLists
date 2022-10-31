@@ -15,9 +15,13 @@ namespace CSharpStringsArraysAndLists
             //Examples.UsefulStringAndCharFunctions();
             //Exercises.arraycords(1,2,3,4,5,6);
             //Console.WriteLine(Exercises.bytething("helloaaa"));
+            //Examples.CreatingLists();
             //List<UTF32Encoding> t = new List<UTF32Encoding>();
             //Console.WriteLine(Exercises.stringthing(t);
-            Exercises.tempaverages();
+            //Exercises.tempaverages();
+            //Exercises.Students();
+            Console.WriteLine(Exercises.PigLatin("The cat sat on the mat"));
+
         }
 
 
